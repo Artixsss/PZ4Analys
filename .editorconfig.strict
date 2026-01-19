@@ -3,26 +3,48 @@
 [*.cs]
 dotnet_analyzer_diagnostic.severity = error
 
-# Структура файла
-dotnet_diagnostic.SA1402.severity = error
-dotnet_diagnostic.SA1633.severity = suggestion
-
-# Порядок и форматирование
-dotnet_diagnostic.SA1000.severity = warning
-dotnet_diagnostic.SA1200.severity = warning
-dotnet_diagnostic.SA1201.severity = warning
-
-# Имена
+# Имена — предупреждение
 dotnet_diagnostic.SA1300.severity = warning
 dotnet_diagnostic.SA1310.severity = warning
 
-# Документация (не валим сборку)
-dotnet_diagnostic.SA0001.severity = suggestion
+# Документация — suggestion
 dotnet_diagnostic.SA1600.severity = suggestion
+dotnet_diagnostic.SA0001.severity = none
 
-# Не заставлять переписывать стиль кода
+# Несколько типов в файле — ошибка
+dotnet_diagnostic.SA1402.severity = error
+
+# Разрешаем var
 dotnet_diagnostic.IDE0007.severity = none
 dotnet_diagnostic.IDE0008.severity = none
+
+# Разрешаем expression-bodied методы
 dotnet_diagnostic.IDE0022.severity = none
-dotnet_diagnostic.IDE0060.severity = none
+
+# Разрешаем new()
 dotnet_diagnostic.IDE0090.severity = none
+dotnet_diagnostic.SA1000.severity = none
+
+dotnet_diagnostic.SA1200.severity = none
+
+# Не требовать this.
+dotnet_diagnostic.SA1101.severity = none
+dotnet_diagnostic.IDE0003.severity = none
+dotnet_diagnostic.IDE0009.severity = warning
+
+dotnet_diagnostic.SA1516.severity = none
+
+dotnet_diagnostic.SA1201.severity = none
+
+dotnet_diagnostic.IDE0005.severity = none
+
+dotnet_diagnostic.IDE0028.severity = none
+
+dotnet_diagnostic.IDE0290.severity = warning
+
+dotnet_diagnostic.SA1633.severity = none
+dotnet_diagnostic.SA1636.severity = suggestion
+
+# Стиль отступов (4 пробела на уровень)
+indent_style = space
+indent_size = 4
