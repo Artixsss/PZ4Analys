@@ -1,0 +1,51 @@
+name: CI / Build & Static Analysis
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  build-and-analyze:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: '8.0.x'
+
+      - name: Restore
+        run: dotnet restore
+
+      - name: Build & Test (base rules)
+        run: |
+          cp .editorconfig.base .editorconfig
+          dotnet build -c Release --no-restore | tee build-base.log || true
+          dotnet test  -c Release --no-build  | tee test-base.log  || true
+
+      - name: Upload base logs
+        uses: actions/upload-artifact@v4
+        with:
+          name: analysis-base-logs
+          path: |
+            build-base.log
+            test-base.log
+
+      - name: Build & Test (strict rules)
+        run: |
+          cp .editorconfig.strict .editorconfig
+          dotnet build -c Release --no-restore | tee build-strict.log || true
+          dotnet test  -c Release --no-build  | tee test-strict.log  || true
+
+      - name: Upload strict logs
+        uses: actions/upload-artifact@v4
+        with:
+          name: analysis-strict-logs
+          path: |
+            build-strict.log
+            test-strict.log
