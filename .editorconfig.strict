@@ -1,19 +1,26 @@
-root = true
+п»їroot = true
 
 [*.cs]
 dotnet_analyzer_diagnostic.severity = error
 
-# Структура файла
+# РЎС‚СЂСѓРєС‚СѓСЂР° С„Р°Р№Р»Р°
 dotnet_diagnostic.SA1402.severity = error
+dotnet_diagnostic.SA1633.severity = suggestion
 
-# Имена
+# РџРѕСЂСЏРґРѕРє Рё С„РѕСЂРјР°С‚РёСЂРѕРІР°РЅРёРµ
+dotnet_diagnostic.SA1000.severity = warning
+dotnet_diagnostic.SA1200.severity = warning
+dotnet_diagnostic.SA1201.severity = warning
+
+# РРјРµРЅР°
 dotnet_diagnostic.SA1300.severity = warning
 dotnet_diagnostic.SA1310.severity = warning
 
-# Документация (не валим сборку)
+# Р”РѕРєСѓРјРµРЅС‚Р°С†РёСЏ (РЅРµ РІР°Р»РёРј СЃР±РѕСЂРєСѓ)
+dotnet_diagnostic.SA0001.severity = suggestion
 dotnet_diagnostic.SA1600.severity = suggestion
 
-# Не заставлять переписывать стиль кода
+# РќРµ Р·Р°СЃС‚Р°РІР»СЏС‚СЊ РїРµСЂРµРїРёСЃС‹РІР°С‚СЊ СЃС‚РёР»СЊ РєРѕРґР°
 dotnet_diagnostic.IDE0007.severity = none
 dotnet_diagnostic.IDE0008.severity = none
 dotnet_diagnostic.IDE0022.severity = none
