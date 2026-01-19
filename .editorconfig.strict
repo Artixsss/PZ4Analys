@@ -1,0 +1,21 @@
+root = true
+
+[*.cs]
+dotnet_analyzer_diagnostic.severity = error
+
+# Структура файла
+dotnet_diagnostic.SA1402.severity = error
+
+# Имена
+dotnet_diagnostic.SA1300.severity = warning
+dotnet_diagnostic.SA1310.severity = warning
+
+# Документация (не валим сборку)
+dotnet_diagnostic.SA1600.severity = suggestion
+
+# Не заставлять переписывать стиль кода
+dotnet_diagnostic.IDE0007.severity = none
+dotnet_diagnostic.IDE0008.severity = none
+dotnet_diagnostic.IDE0022.severity = none
+dotnet_diagnostic.IDE0060.severity = none
+dotnet_diagnostic.IDE0090.severity = none
